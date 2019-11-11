@@ -37,7 +37,6 @@ void Mesh::setupMesh()
 
 void Mesh::draw(Shader shader, bool center, glm::vec3 scale)
 {
-    // std::cout << vertices[0].position.x << ' ' << vertices[0].position.y << ' ' << vertices[0].position.z << std::endl;
     unsigned int diffuseNr = 1;
     unsigned int specularNr = 1;
     for (unsigned int i = 0; i < material.textures.size(); i++)

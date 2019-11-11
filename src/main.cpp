@@ -57,6 +57,7 @@ int main()
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPosCallback(window, mouse_callback);
 
+    // 均分点光源位置
     vector<glm::vec3> lightPos;
     float radius = 3;
     float perAngle = 360.0 / NUM_POINT_LIGHT;
@@ -80,7 +81,7 @@ int main()
     ourShader.use();
     ourShader.setInt("material.shininess", 32);
 
-    MyModel ourModel("../model/dog/test.obj");
+    MyModel ourModel("../model/libai/test.obj");
 
     while (!glfwWindowShouldClose(window))
     {
@@ -115,8 +116,8 @@ int main()
         ourShader.setMat4("projection", projection);
         ourShader.setMat4("view", view);
         ourShader.setVec3("viewPos", camera.position);
-        ourModel.draw(ourShader, glm::vec3(0.001));
-        // ourModel.drawMeshByIndex(ourShader, 2, glm::vec3(0.01));
+        // ourModel.draw(ourShader, glm::vec3(0.01));
+        ourModel.drawMeshByIndex(ourShader, 3, glm::vec3(0.01));
 
         glBindVertexArray(lightVAO);
         lightShader.use();

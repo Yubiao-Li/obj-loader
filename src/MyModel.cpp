@@ -249,6 +249,5 @@ void MyModel::draw(Shader shader, glm::vec3 scale)
 
 void MyModel::drawMeshByIndex(Shader shader, int index, glm::vec3 scale)
 {
-    cout << meshes[index].vertices[0].position.x << meshes[index].vertices[0].position.y << meshes[index].vertices[0].position.z << endl;
     meshes[index].draw(shader, true, scale);
 }
